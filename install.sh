@@ -6,6 +6,6 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh /tmp/installer.sh ~/.cache/dein
 rm /tmp/installer.sh
 
-ln -l .vimrc ~/.vimrc
+ln -s `pwd`/.vimrc ~/.vimrc
 mkdir -p ~/.vim
-ln -l ftplugin ~/.vim/.
+ln -s `pwd`/ftplugin ~/.vim/ftplugin
