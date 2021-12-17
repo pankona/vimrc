@@ -85,6 +85,7 @@ set signcolumn=yes
 set autoread
 set visualbell t_vb=
 set clipboard+=unnamed
+set noswapfile
 
 " disable ale by default
 let g:ale_enabled = 0
