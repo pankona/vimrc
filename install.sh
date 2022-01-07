@@ -7,7 +7,7 @@ sh /tmp/installer.sh ~/.cache/dein
 rm /tmp/installer.sh
 
 rm -f ~/.vimrc
-rm -rf ~/.vim
+rm -rf ~/.vim/ftplugin
 
 ln -s `pwd`/.vimrc ~/.vimrc
 mkdir -p ~/.vim
