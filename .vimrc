@@ -38,6 +38,10 @@ call dein#add('codegram/vim-codereview')
 call dein#add('elixir-editors/vim-elixir')
 call dein#add('jparise/vim-graphql')
 call dein#add('tokorom/vim-review')
+call dein#add('vim-denops/denops.vim')
+call dein#add('lambdalisue/gin.vim')
+call dein#add('github/copilot.vim')
+call dein#add('hashivim/vim-terraform')
 
 call dein#end()
 
@@ -86,6 +90,7 @@ set autoread
 set visualbell t_vb=
 set clipboard+=unnamed
 set noswapfile
+set splitright
 
 " disable ale by default
 let g:ale_enabled = 0
@@ -109,6 +114,7 @@ augroup END
 cabbrev grep Ag
 cabbrev ag Ag
 cabbrev lca LspCodeAction
+cabbrev gl GinLog ++opener=vsplit -p %:p
 
 nnoremap : ;
 nnoremap ; :
@@ -126,6 +132,8 @@ nnoremap <leader>fb :Buffers<CR>
 
 " copy fullpath of a file on current buffer
 nnoremap <leader>cf :let @*=expand("%:p")<CR>
+
+nnoremap <leader>t :vertical terminal<CR>
 
 let g:lsp_settings_servers_dir = expand("~/.lsp_server")
 
@@ -177,3 +185,9 @@ let g:prettier#config#arrow_parens = 'always'
 
 "" ノーマルモード時に非点滅のブロックタイプのカーソル
 let &t_EI .= "\e[2 q"
+
+let g:copilot_filetypes = {
+  \ 'gitcommit': v:true,
+  \ 'markdown': v:true,
+  \ 'yaml': v:true
+  \ }
