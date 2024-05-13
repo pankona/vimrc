@@ -114,7 +114,7 @@ augroup END
 cabbrev grep Ag
 cabbrev ag Ag
 cabbrev lca LspCodeAction
-cabbrev gl GinLog ++opener=vsplit -p %:p
+cabbrev gl GinLog ++opener=vsplit -p -- %:p
 
 nnoremap : ;
 nnoremap ; :
