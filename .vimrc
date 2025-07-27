@@ -78,7 +78,7 @@ set termencoding=utf-8
 set window=0
 set number
 set scrolloff=7
-set ambiwidth=double
+set ambiwidth=single " double だと claude code の見た目がおかしくなるので single にする
 set directory=~/.vim/tmp
 set ruler
 set background=dark
@@ -91,6 +91,7 @@ set visualbell t_vb=
 set clipboard+=unnamed
 set noswapfile
 set splitright
+set shell=bash
 
 " disable ale by default
 let g:ale_enabled = 0
@@ -164,6 +165,9 @@ inoremap <C-f> <C-x><C-o>
 nnoremap <leader>pa "+p
 vnoremap <leader>pa d"+p
 cnoremap <leader>pa <C-r>+
+
+" claude code にビジュアルブロックで指定した場所のファイルパスと行数を渡すためのコマンド
+vnoremap <leader>y :<C-u>let @" = '@' . expand('%') . ':L' . line("'<") . '-L' . line("'>")<CR>
 
 inoremap <expr> <ESC><ESC> pumvisible() ? "\<C-y>\<ESC>" : "\<ESC>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
