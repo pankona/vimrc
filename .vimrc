@@ -53,7 +53,7 @@ if dein#check_install()
 endif
 
 set hidden
-set spell
+"set spell
 set spelllang=en,cjk
 set list
 set listchars=tab:»-
